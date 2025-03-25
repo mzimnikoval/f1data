@@ -1,23 +1,25 @@
 <template>
   <Card class="p-4 m-4">
-    <template #title>Lap Times Chart</template>
-    <template #content>
-      <div class="flex flex-col gap-3 mb-4">
-        <div class="flex gap-2">
+    <template #header>
+      <div class="flex">
+        Lap Times Chart
+        <div>
           <Button label="Select All" @click="selectAllDrivers" />
           <Button label="Unselect All" @click="unselectAllDrivers" />
         </div>
+      </div>
+    </template>
+    <template #content>
+      <div class="multiselect">
         <MultiSelect
           v-model="selectedDrivers"
           :options="allDrivers"
           optionLabel="name"
           optionValue="code"
           placeholder="Select Drivers"
-          class="w-full md:w-40rem"
           display="chip"
         />
       </div>
-
       <div v-if="chartData.datasets.length > 0">
         <Line :data="chartData" :options="chartOptions" />
       </div>
@@ -102,7 +104,7 @@ const driverColors = {
   ALO: '#229971', STR: '#229971',
   DOO: '#FF87BC', GAS: '#FF87BC',
   BOR: '#00e701', HUL: '#00e701',
-  BEA: '#FFFFFF', OCO: '#FFFFFF',
+  BEA: '#000000', OCO: '#000000',
   TSU: '#6692FF', HAD: '#6692FF',
   SAI: '#64C4FF', ALB: '#64C4FF',
 };
@@ -197,3 +199,16 @@ onMounted(async () => {
   selectAllDrivers();
 });
 </script>
+<style>
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .multiselect {
+    max-width: 100%;
+  }
+  .p-multiselect {
+    max-width: 100%;
+  }
+</style>
