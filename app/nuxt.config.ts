@@ -9,6 +9,11 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/f1data/' // 👈 important for GitHub Pages
   },
+  nitro: {
+    prerender: {
+      fallback: '404.html',
+    }
+  },
   modules: [
     '@primevue/nuxt-module'
   ],
