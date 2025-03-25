@@ -7,7 +7,8 @@ export default defineNuxtConfig({
   ssr: false,
   target: 'static',
   app: {
-    baseURL: '/f1data/' // 👈 important for GitHub Pages
+    baseURL: '/f1data/', // 👈 important for GitHub Pages
+    buildAssetsDir: 'assets', // don't use "_" at the begining of the folder name to avoids nojkill conflict
   },
   nitro: {
     prerender: {
