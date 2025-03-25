@@ -3,6 +3,6 @@
   </template>
   
   <script setup>
-  import LapTimeChart from '@/components/LapTimeChart.vue';
+  import LapTimeChart from '../components/LapTimeChart.vue';
   </script>
   
