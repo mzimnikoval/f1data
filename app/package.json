@@ -5,10 +5,10 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy": "nuxt generate && echo > .output/public/.nojekyll && gh-pages -d .output/public"
+    "generate": "NUXT_APP_BASE_URL=/f1data/ nuxt generate",
+    "deploy": "npm run generate && echo > .output/public/.nojekyll && gh-pages -d .output/public"
   },
   "dependencies": {
     "@primeuix/themes": "^1.0.0",
